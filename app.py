@@ -16,7 +16,7 @@ def upload_file():
         filename = secure_filename(file.filename)
         file.save(app.config("static/"+ filename)) #Heroku no need static
         file = open(app.config("static/"+ filename,"r")) #Heroku no need static
-        model = load_model("Flower")
+        model = load_model("Pneumonia")
         img = Image.open(filename) #rose = 3, sunflower = 4, tulip 5
         img = img.resize((100,100))
         img = np.asarray(img, dtype="float32") #need to transfer to np to reshape
